@@ -26,29 +26,6 @@
             if(verzenden == true) {
                 document.getElementById("myForm").submit()
             }
-
-           
-           
-           
-           
-           
-           
-           
-           
-           
-            // console.log(document.getElementById("login").value.length)
-            // if(document.getElementById("login").value.length < 3) {
-            //     document.getElementById("login").style.backgroundColor = "orange"
-            // } else {
-            //     document.getElementById("login").style.backgroundColor = "lightgreen"
-            // }
-
-            // console.log(document.getElementById("pass").value.length)
-            // if(document.getElementById("pass").value.length < 8) {
-            //     document.getElementById("pass").style.backgroundColor = "orange"
-            // } else {
-            //     document.getElementById("pass").style.backgroundColor = "lightgreen"
-            // }
         }
     </script>
 </body>
