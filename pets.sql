@@ -4,11 +4,11 @@ USE pets;
 
 CREATE TABLE `pet` (
   pet_no int(11) NOT NULL AUTO_INCREMENT,
-  pet_name varchar(100) DEFAULT NULL,
-  species varchar(100) DEFAULT NULL,
-  gender varchar(60) DEFAULT NULL,
-  birthdate date DEFAULT NULL,
-  owner varchar(100) DEFAULT NULL,
+  pet_name varchar(100) NOT NULL,
+  species varchar(100) NOT NULL,
+  gender varchar(60) NOT NULL,
+  birthdate date NOT NULL,
+  owner varchar(100) NOT NULL,
   active tinyint(4) NOT NULL DEFAULT '1',
   PRIMARY KEY (pet_no)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

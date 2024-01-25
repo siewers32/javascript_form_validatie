@@ -13,29 +13,42 @@ function checkLogin() {
                 errors.push("pet_no: Niet leeg of geen nummer")
                 faulty_elements.push(el)
             }
-        } else if(el.id == "pet_name" || el.id == "species" || el.id == "eigenaar") {
+        } else if(el.id == "pet_name" || el.id == "species" || el.id == "owner") {
             if(el.value.length < 3) {
                 verzenden = false;
-                errors.push(el.id + ": Minimaal 3 letters")
+                errors.push("Naam, soort of eigenaar: Minimaal 3 letters.")
                 faulty_elements.push(el)                       
             }
         } else if(el.id == "gender") {
             if(el.value != "male" && el.value != "female") {
                 verzenden = false;                       
-                errors.push("gender: Moet male of female zijn")
+                errors.push("Geslacht: Moet male of female zijn")
                 faulty_elements.push(el)                       
             }
         } else if(el.id == "birthdate") {
             console.log(Date.parse(el.value))
             if(isNaN(Date.parse(el.value))) {
                 verzenden = false;                       
-                errors.push("birthdate: Moet een valide datum zijn bijv. (17-12-1964)")
+                errors.push("Geboortedatum: Moet een valide datum zijn bijv. (17-12-1964)")
                 faulty_elements.push(el)                       
             }
         }
     }
-    console.log(errors)
-    console.log(faulty_elements) 
+
+    const uniqueErrors = errors.filter((value, index, self) => {
+        return self.indexOf(value) === index;
+    });
+
+    console.log(faulty_elements)
+    errorTekst = "";
+    for(let i = 0; i < uniqueErrors.length; i++) {
+        errorTekst += uniqueErrors[i] + "<br>"
+    }
+    if(errorTekst.length > 0) {
+        errors = document.getElementById("errors")
+        errors.style.display = "block"
+        errors.innerHTML = errorTekst
+    }
     for(let i = 0; i < faulty_elements.length; i++) {
         faulty_elements[i].style.backgroundColor = "orange"
     }
