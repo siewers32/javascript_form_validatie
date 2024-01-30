@@ -100,7 +100,7 @@ function getMessages($messages)
 {
     $result = "";
     if (count($messages) > 0) {
-        $result = "\n<ul class='messages'>\n";
+        $result = "\n<ul id='messages' class='messages'>\n";
         foreach ($messages as $m) {
             $result .= "\t<li>" . $m . "</li>\n";
         }
